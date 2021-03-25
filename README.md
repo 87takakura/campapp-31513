@@ -40,8 +40,6 @@
 - has_many :comments
 - has_many :chats
 
-
-
 ## comments テーブル
 
 | Column    | Type       | Options     |
