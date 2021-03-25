@@ -1,0 +1,49 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+<%= form_for @user do |f| %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder:"ユーザー名", autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder:"PC・携帯どちらでも可", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname, placeholder:"名前を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname, placeholder:"苗字を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :katakanafirstname %><br />
+    <%= f.text_field :katakanafirstname, placeholder:"(カナ)名前を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :katakanalastname %><br />
+    <%= f.text_field :katakanalastname, placeholder:"(カナ)苗字を入力して下さい", autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.text_area :birthday, placeholder:"誕生日を入力して下さい", autofocus: true %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Edit_user" %>
+  </div>
+
+
+<% end %>
+

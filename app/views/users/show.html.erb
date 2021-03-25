@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<h1 class="title">
+  マイページ
+</h1>
+
+<%= @user.username %>
+
+  <%= link_to "編集", edit_user_path(@user), class: "button is_warning is-light" %>

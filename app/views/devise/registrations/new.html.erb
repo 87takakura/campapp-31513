@@ -1,0 +1,88 @@
+  <%#<div class='form-header'>
+    <h1 class='form-header-text'>
+      会員情報入力
+    </h1>
+    フリマよりのコピー
+
+  </div> %>
+
+
+
+
+
+
+<h2>新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username, placeholder:"ユーザー名", autofocus: true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder:"PC・携帯どちらでも可", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, placeholder:"6文字以上の半角英数字", autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, placeholder:"同じパスワードを入力して下さい", autocomplete: "new-password" %>
+  </div>
+
+
+
+  <div class="field">
+    <%= f.label :firstname %><br />
+    <%= f.text_field :firstname, placeholder:"名前を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %><br />
+    <%= f.text_field :lastname, placeholder:"苗字を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :katakanafirstname %><br />
+    <%= f.text_field :katakanafirstname, placeholder:"(カナ)名前を入力して下さい", autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :katakanalastname %><br />
+    <%= f.text_field :katakanalastname, placeholder:"(カナ)苗字を入力して下さい", autofocus: true %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.text_area :birthday, placeholder:"誕生日を入力して下さい", autofocus: true %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
