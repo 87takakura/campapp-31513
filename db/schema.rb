@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_023612) do
     t.bigint "user_id", null: false
     t.integer "watersupply_id", null: false
     t.integer "outlet_id", null: false
+    t.integer "fire_id", null: false
+    t.integer "cargetin_id", null: false
     t.integer "toilet_id", null: false
     t.integer "bath_id", null: false
     t.integer "parking_id", null: false

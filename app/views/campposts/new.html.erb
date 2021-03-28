@@ -34,6 +34,10 @@
    <%= f.collection_select(:watersupply_id, Watersupply.all, :id, :name, {}, {class:"select-box", id:"camppost-watersupply"}) %>
    <%="電源の有無"%>
    <%= f.collection_select(:outlet_id, Outlet.all, :id, :name, {}, {class:"select-box", id:"camppost-outlet"}) %>
+   <%="焚火の可不可"%>
+   <%= f.collection_select(:fire_id, Fire.all, :id, :name, {}, {class:"select-box", id:"camppost-fire"}) %>
+   <%="車乗入れの可不可"%>
+   <%= f.collection_select(:cargetin_id, Cargetin.all, :id, :name, {}, {class:"select-box", id:"camppost-cargetin"}) %> 
    <%="トイレの有無"%>
    <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"select-box", id:"camppost-toilet"}) %>
    <%="風呂の有無"%> 

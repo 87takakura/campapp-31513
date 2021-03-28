@@ -39,7 +39,7 @@ class CamppostsController < ApplicationController
 
   private
    def camppost_params
-    params.require(:camppost).permit(:name, :information, :prefecture_id, :city, :watersupply_id, :outlet_id, :toilet_id, :bath_id, :parking_id, :phone_number, :web_site, :image).merge(user_id: current_user.id)
+    params.require(:camppost).permit(:name, :information, :prefecture_id, :city, :watersupply_id, :outlet_id, :toilet_id, :bath_id, :parking_id, :fire_id, :cargetin_id, :phone_number, :web_site, :image).merge(user_id: current_user.id)
    end
  
 

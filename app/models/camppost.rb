@@ -11,6 +11,9 @@ class Camppost < ApplicationRecord
   belongs_to :toilet
   belongs_to :bath
   belongs_to :parking
+  belongs_to :fire
+  belongs_to :cargetin
+
 
   validates :prefecture_id, numericality: { other_than: 1 }
   validates :watersupply_id, numericality: { other_than: 1 }
@@ -18,6 +21,8 @@ class Camppost < ApplicationRecord
   validates :toilet_id, numericality: { other_than: 1 }
   validates :bath_id, numericality: { other_than: 1 }
   validates :parking_id, numericality: { other_than: 1 }
+  validates :fire_id, numericality: { other_than: 1 }
+  validates :cargetin_id, numericality: { other_than: 1 }
 
 
 end
