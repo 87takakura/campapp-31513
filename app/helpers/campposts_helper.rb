@@ -1,0 +1,2 @@
+module CamppostsHelper
+end

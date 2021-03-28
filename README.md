@@ -15,18 +15,19 @@
 
 ### Association
 
-- has_many :articles
+- has_many :campposts
 - has_many :comments
 - has_many :chats
  
-## articles テーブル 
+## campposts テーブル 
  
 | Column          | Type        | Options      |
 | --------------- | ----------  | -----------  |
 | name            | string      | null: false  |
 | information     | text        | null: false  |
+| prefecture_id       | integer     | null: false  |
 | city            | text        | null: false  |
-| user            | references  | null: false, foreign_key:true |
+| user            | references  | null: false foreign_key:true |
 | water_supply_id | integer     | null: false  |
 | socket_id       | integer     | null: false  |
 | toilet_id       | integer     | null: false  |
@@ -46,23 +47,23 @@
 | -------   | ---------- | ----------- |
 | text      | text       | null: false |
 | user      | references | null: false, foreign_key:true |
-| article   | references | null: false, foreign_key:true |
+| camppost   | references | null: false, foreign_key:true |
 
 
 ### Association
 
 - belongs_to :user
-- belongs_to :article
+- belongs_to :camppost
 
   ### chatsテーブル
   
   | Column             | Type       | Options     |
   | ------------------ | ---------- | ----------- |
   | user               | references | null: false, foreign_key:true |
-  | article            | references | null: false, foreign_key:true |
+  | camppost           | references | null: false, foreign_key:true |
   | text               | text       | null: false |
 
   ### Association
 
 - belongs_to :user
-- belongs_to :article
+- belongs_to :camppost

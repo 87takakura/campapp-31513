@@ -1,0 +1,51 @@
+<h1>Campposts#show</h1>
+<p>Find me in app/views/campposts/show.html.erb</p>
+
+  <%= image_tag @camppost.image ,class:"camppost-box-img" %>
+
+
+   <th class="detail-camppost">投稿者</th>
+   <td class="detail-value"><%= @camppost.user.username %></td>
+
+
+
+
+
+    <div class="item-explain-box">
+      <span><%= @camppost.information %></span>
+    </div>
+      <tbody>
+        <tr>
+
+
+   <th class="detail-camppost">県</th>
+   <td class="detail-value"><%= @camppost.prefecture.name %></td>
+
+   <th class="detail-camppost">市町村以下の住所</th>
+   <td class="detail-value"><%= @camppost.city %></td>
+
+   <th class="detail-camppost">水道の有無</th>
+   <td class="detail-value"><%= @camppost.watersupply.name %></td>
+
+
+   <th class="detail-camppost">電源の有無</th>
+   <td class="detail-value"><%= @camppost.outlet.name %></td>
+
+   <th class="detail-camppost">トイレの有無</th>
+   <td class="detail-value"><%= @camppost.toilet.name %></td>
+
+   <th class="detail-camppost">風呂の有無</th>
+   <td class="detail-value"><%= @camppost.bath.name %></td>
+
+   <th class="detail-camppost">駐車場の有無</th>
+   <td class="detail-value"><%= @camppost.parking.name %></td>
+
+
+   <th class="detail-camppost">電話番号</th>
+   <td class="detail-value"><%= @camppost.phone_number %></td>
+
+   <th class="detail-camppost">公式webサイト</th>
+   <td class="detail-value"><%= @camppost.web_site %></td>
+
+        </tr>
+      </tbody>
