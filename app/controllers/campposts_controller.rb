@@ -1,5 +1,6 @@
 class CamppostsController < ApplicationController
   def index
+    @camppost = Camppost.all
   end
 
   def show
@@ -9,6 +10,8 @@ class CamppostsController < ApplicationController
   def new
     @camppost = Camppost.new
   end
+
+
  
   def create
    @camppost = Camppost.new(camppost_params)
@@ -23,18 +26,28 @@ class CamppostsController < ApplicationController
 
 
 
- # def update
-  #  @user = User.find(params[:id])
-   # if @user.update(user_params)
-    #   redirect_to user_path(@user)
-    #else
-     # render :edit
-    #end
-  #end
+  def update
+   @camppost = Camppost.find(params[:id])
+    if @camppost.update(camppost_params)
+       redirect_to camppost_path(@camppost)
+    else
+      render :edit
+    end
+  end
 
 
 
   def edit
+    @camppost = Camppost.find(params[:id])
+  end
+
+  def destroy
+    @camppost = Camppost.find(params[:id])
+    if @camppost.destroy
+      redirect_to user_path(current_user)
+    else
+      redirect_to root_path
+    end
   end
 
   private

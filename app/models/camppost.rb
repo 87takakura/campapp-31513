@@ -4,7 +4,6 @@ class Camppost < ApplicationRecord
   #has_many :comments
   #has_many :chats
   has_one_attached :image
-
   belongs_to :prefecture
   belongs_to :watersupply
   belongs_to :outlet
@@ -15,14 +14,25 @@ class Camppost < ApplicationRecord
   belongs_to :cargetin
 
 
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :watersupply_id, numericality: { other_than: 1 }
-  validates :outlet_id, numericality: { other_than: 1 }
-  validates :toilet_id, numericality: { other_than: 1 }
-  validates :bath_id, numericality: { other_than: 1 }
-  validates :parking_id, numericality: { other_than: 1 }
-  validates :fire_id, numericality: { other_than: 1 }
-  validates :cargetin_id, numericality: { other_than: 1 }
+  with_options presence: true do
+    validates :name
+    validates :information
+    validates :image
+    validates :city
+  end
 
+
+
+
+  with_options numericality: { other_than: 1, message: 'Select' } do
+    validates :prefecture_id
+    validates :watersupply_id
+    validates :outlet_id
+    validates :toilet_id
+    validates :bath_id
+    validates :parking_id
+    validates :fire_id
+    validates :cargetin_id
+  end
 
 end
