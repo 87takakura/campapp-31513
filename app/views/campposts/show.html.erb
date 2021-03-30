@@ -18,7 +18,11 @@
         <tr>
 
         <span>キャンプ場情報</span>
+   <th class="detail-camppost">記事名</th>
+   <td class="detail-value"><%= @camppost.name %></td>
 
+   <th class="detail-camppost">記事内容</th>
+   <td class="detail-value"><%= @camppost.information %></td>
 
    <th class="detail-camppost">県</th>
    <td class="detail-value"><%= @camppost.prefecture.name %></td>
