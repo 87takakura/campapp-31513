@@ -4,7 +4,13 @@
 <% @campposts.each do |camppost| %>
 
         <%= image_tag camppost.image.variant(resize: '400x400'), class: 'camppost-image' if camppost.image.attached? %>
+        <span><%= camppost.prefecture.name %><%= camppost.name %></span>
+
+
 <%= link_to"記事詳細へ", camppost_path(camppost) %>
 <% end %>
+
+
+
 
 
