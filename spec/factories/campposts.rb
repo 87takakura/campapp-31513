@@ -13,6 +13,8 @@ FactoryBot.define do
     parking_id { 2 }
     phone_number { '08012345678' }
     web_site { 'sample.co.jp' }
+    association :user
+
    #ダミーデータに画像を添付する 
    after(:build) do |message|
     message.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')

@@ -1,7 +1,7 @@
 <h1>Campposts#index</h1>
 <p>Find me in app/views/campposts/index.html.erb</p>
 
-<% @camppost.each do |camppost|%>
+<% @campposts.each do |camppost| %>
 
         <%= image_tag camppost.image.variant(resize: '400x400'), class: 'camppost-image' if camppost.image.attached? %>
 <%= link_to"記事詳細へ", camppost_path(camppost) %>
