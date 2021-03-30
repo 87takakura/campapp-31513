@@ -1,0 +1,82 @@
+<h1>Campposts#show</h1>
+<p>Find me in app/views/campposts/show.html.erb</p>
+
+
+
+   <th class="detail-camppost">投稿者</th>
+   <td class="detail-value"><%= @camppost.user.username %></td>
+      <%= image_tag @camppost.image ,class:"item-box-img" %>
+
+
+
+
+
+    <div class="item-explain-box">
+      <span><%= @camppost.information %></span>
+    </div>
+      <tbody>
+        <tr>
+
+        <span>キャンプ場情報</span>
+   <th class="detail-camppost">記事名</th>
+   <td class="detail-value"><%= @camppost.name %></td>
+
+   <th class="detail-camppost">記事内容</th>
+   <td class="detail-value"><%= @camppost.information %></td>
+
+   <th class="detail-camppost">県</th>
+   <td class="detail-value"><%= @camppost.prefecture.name %></td>
+
+   <th class="detail-camppost">市町村以下の住所</th>
+   <td class="detail-value"><%= @camppost.city %></td>
+
+    <th class="detail-camppost">電話番号</th>
+   <td class="detail-value"><%= @camppost.phone_number %></td>
+
+   <th class="detail-camppost">公式webサイト</th>
+   <td class="detail-value"><%= @camppost.web_site %></td>
+
+   <th class="detail-camppost">トイレの有無</th>
+   <td class="detail-value"><%= @camppost.toilet.name %></td>
+
+   <th class="detail-camppost">風呂の有無</th>
+   <td class="detail-value"><%= @camppost.bath.name %></td>
+
+   <th class="detail-camppost">駐車場の有無</th>
+   <td class="detail-value"><%= @camppost.parking.name %></td>
+
+
+        <span>キャンプサイト情報</span>
+
+
+
+   <th class="detail-camppost">水道の有無</th>
+   <td class="detail-value"><%= @camppost.watersupply.name %></td>
+
+   <th class="detail-camppost">電源の有無</th>
+   <td class="detail-value"><%= @camppost.outlet.name %></td>
+
+   <th class="detail-camppost">焚火の可不可</th>
+   <td class="detail-value"><%= @camppost.fire.name %></td>
+
+   <th class="detail-camppost">車乗入れの可不可</th>
+   <td class="detail-value"><%= @camppost.cargetin.name %></td>
+
+
+
+    <% if user_signed_in? %>
+     <% if current_user.id == @camppost.user.id %>
+       <%= link_to "記事の編集", edit_camppost_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
+       <p class="or-text">or</p>
+       <%= link_to "記事の削除", camppost_path(@camppost), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "camppost-destroy" %>
+    <% else %>
+       <%#= link_to "投稿者へチャットメッセージを送る", camppost_orders_path(@item.id), method: :get, class:"camppost-red-btn"%>
+     <% end %>
+    <% end %>
+
+
+   <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "campppost-red-btn" %>
+
+
+        </tr>
+      </tbody>

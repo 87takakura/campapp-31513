@@ -7,4 +7,14 @@
 
 <%= @user.username %>
 
-  <%= link_to "編集", edit_user_path(@user), class: "button is_warning is-light" %>
+
+  <%= link_to "記事投稿", new_camppost_path, class: "button is_warning is-light" %>
+
+
+  <%= link_to "ユーザー情報の編集", edit_user_path(@user), class: "button is_warning is-light" %>
+
+<% @user.campposts.each do |camppost| %>
+        <%= image_tag camppost.image.variant(resize: '400x400'), class: 'camppost-image' if camppost.image.attached? %>
+        <%= link_to"記事詳細へ", camppost_path(camppost) %>
+
+<% end %>
