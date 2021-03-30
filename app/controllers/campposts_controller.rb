@@ -5,7 +5,8 @@ class CamppostsController < ApplicationController
 
 
   def index
-    @campposts = Camppost.all
+    @campposts = Camppost.order('created_at DESC')
+
   end
 
   def show
@@ -27,9 +28,6 @@ class CamppostsController < ApplicationController
   end
 
 
-
-
-
   def update
     if @camppost.update(camppost_params)
        redirect_to camppost_path(@camppost)
@@ -41,7 +39,6 @@ class CamppostsController < ApplicationController
 
 
   def edit
-    end
   end
 
   def destroy
@@ -55,7 +52,6 @@ class CamppostsController < ApplicationController
   private
    def set_camppost
     @camppost = Camppost.find(params[:id])
-
    end
 
    def camppost_params
@@ -66,7 +62,8 @@ class CamppostsController < ApplicationController
     if @camppost.user != current_user
       redirect_to camppost_path 
     end
+   end
+  end
 
 
 
-end

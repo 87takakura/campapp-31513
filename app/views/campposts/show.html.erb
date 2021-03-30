@@ -68,7 +68,7 @@
      <% if current_user.id == @camppost.user.id %>
        <%= link_to "記事の編集", edit_camppost_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
        <p class="or-text">or</p>
-       <%= link_to "記事の削除", camppost_path(@camppost), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "camppost-destroy" %>
+       <%= link_to "記事の削除", camppost_path(@camppost.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "camppost-destroy" %>
     <% else %>
        <%#= link_to "投稿者へチャットメッセージを送る", camppost_orders_path(@item.id), method: :get, class:"camppost-red-btn"%>
      <% end %>
