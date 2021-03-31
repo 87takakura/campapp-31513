@@ -13,6 +13,7 @@ class Camppost < ApplicationRecord
   belongs_to :fire
   belongs_to :cargetin
 
+  has_many :comments
 
   with_options presence: true do
     validates :name

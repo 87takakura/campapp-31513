@@ -7,7 +7,7 @@ class User < ApplicationRecord
  has_many :campposts, dependent: :destroy
  #has_many :comments         
  #has_many :chats
-         
+ has_many :comments      
   
 
  has_one_attached :iamge
