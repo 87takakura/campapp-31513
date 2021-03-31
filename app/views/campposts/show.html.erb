@@ -67,12 +67,34 @@
     <% if user_signed_in? %>
      <% if current_user.id == @camppost.user.id %>
        <%= link_to "記事の編集", edit_camppost_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
-       <p class="or-text">or</p>
        <%= link_to "記事の削除", camppost_path(@camppost.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "camppost-destroy" %>
     <% else %>
        <%#= link_to "投稿者へチャットメッセージを送る", camppost_orders_path(@item.id), method: :get, class:"camppost-red-btn"%>
      <% end %>
     <% end %>
+
+  <% @camppost.comments.each do |comment| %>
+   <div>
+    <%= comment.user.username %>
+    <%= comment.message %>
+   </div>
+
+   <%= link_to "コメントの削除", camppost_comment_path(@camppost.id), method: :delete, class: "campppost-red-btn" %>
+
+   
+  <% end %>
+
+
+  <%= form_with model: [@camppost, @comment], local: true do |f| %>
+
+   <%= f.text_field :message, placeholder:"コメントを投稿して下さい" %>
+   <%= f.submit "コメントを投稿する" %>
+
+  <% end %>
+
+
+
+
 
 
    <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "campppost-red-btn" %>
