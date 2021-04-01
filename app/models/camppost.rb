@@ -13,7 +13,7 @@ class Camppost < ApplicationRecord
   belongs_to :fire
   belongs_to :cargetin
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   with_options presence: true do
     validates :name

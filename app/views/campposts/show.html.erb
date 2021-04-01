@@ -79,7 +79,9 @@
     <%= comment.message %>
    </div>
 
-   <%= link_to "コメントの削除", camppost_comment_path(@camppost.id), method: :delete, class: "campppost-red-btn" %>
+    <% if comment.user == current_user %>
+      <%= link_to "コメントの削除", [comment.camppost, comment], method: :delete, class: "campppost-red-btn" %>
+    <% end %>
 
    
   <% end %>
