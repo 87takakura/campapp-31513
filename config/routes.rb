@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :campposts do
       resources :comments
     end
-end
+   
+  resources :chats
+
+
+  end

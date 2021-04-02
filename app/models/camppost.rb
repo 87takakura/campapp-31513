@@ -1,8 +1,6 @@
 class Camppost < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user, optional: true
-  #has_many :comments
-  #has_many :chats
   has_one_attached :image
   belongs_to :prefecture
   belongs_to :watersupply
@@ -14,6 +12,7 @@ class Camppost < ApplicationRecord
   belongs_to :cargetin
 
   has_many :comments, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   with_options presence: true do
     validates :name

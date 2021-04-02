@@ -1,0 +1,8 @@
+<h1>Chats#index</h1>
+<p>Find me in app/views/chats/index.html.erb</p>
+ 
+ <h1>AjaxApp</h1>
+<%= form_with url:  "/chats", method: :chat,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' , id: "submit" %>
+<% end %>
