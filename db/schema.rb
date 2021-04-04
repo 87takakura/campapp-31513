@@ -54,13 +54,10 @@ ActiveRecord::Schema.define(version: 2021_04_01_211529) do
   end
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "camppost_id", null: false
     t.text "message"
+    t.boolean "checked"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["camppost_id"], name: "index_chats_on_camppost_id"
-    t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -94,8 +91,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_211529) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "campposts", "users"
-  add_foreign_key "chats", "campposts"
-  add_foreign_key "chats", "users"
   add_foreign_key "comments", "campposts"
   add_foreign_key "comments", "users"
 end

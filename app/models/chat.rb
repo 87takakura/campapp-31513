@@ -1,4 +1,4 @@
 class Chat < ApplicationRecord
-  belongs_to :user
-  belongs_to :camppost
+  #belongs_to :user
+  #belongs_to :camppost
 end

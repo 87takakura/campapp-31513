@@ -3,27 +3,22 @@ class ChatsController < ApplicationController
     @chats = Chat.all.order(id: "DESC")
   end
 
+  
   def create
-    chat = Chat.create(message: params[:message])
+    chat = Chat.create!(message: params[:message])
     render json:{ chat: chat }
   end
 
-  def checked
-    chat = Chat.find(params[:id])
-    if chat.checked 
-      chat.update(checked: false)
-    else
-      chat.update(checked: true)
-    end
+  #def checked
+    #chat = Chat.find(params[:id])
+    #if chat.checked 
+     # chat.update(checked: false)
+    #else
+     # chat.update(checked: true)
+    #end
 
-    item = Chat.find(params[:id])
-    render json: { chat: item }
-  end
-
-  #def new
-    #@chat = Chat.new
+    #item = Chat.find(params[:id])
+    #render json: { chat: item }
   #end
 
-  #def edit
-  #end
 end
