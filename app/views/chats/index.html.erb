@@ -2,7 +2,21 @@
 <p>Find me in app/views/chats/index.html.erb</p>
  
  <h1>AjaxApp</h1>
-<%= form_with url:  "/chats", method: :chat,id: "form" do |form| %>
-  <%= form.text_field :content %>
-  <%= form.submit '投稿する' , id: "submit" %>
+<%= form_with url:  "/chats", method: :post, id: "form" do |form| %>
+ <%= form.text_field :message , id: "message"%>
+ <%= form.submit '投稿する' , id: "submit" %>
 <% end %>
+
+<div id="list">
+</div>
+
+<% @chats.each do |chat| %>
+ <div class="chat" data-id=<%= chat.id %> data-check=<%= chat.checked %>>   
+   <div class="chat-date">
+        投稿日時：<%= chat.created_at %>
+   </div>
+   <div class="chat-content">
+        <%= chat.message %>
+   </div>
+ </div>
+<% end %> 

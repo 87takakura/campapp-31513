@@ -102,7 +102,7 @@
 
    <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "campppost-red-btn" %>
 
-   <%= link_to "チャットページへ", chats_path, class: "campppost-red-btn" %>
+   <%= link_to "チャットページへ", chats_path, method: :get, class: "campppost-red-btn" %>
 
         </tr>
       </tbody>

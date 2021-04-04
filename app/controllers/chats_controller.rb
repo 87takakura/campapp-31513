@@ -4,8 +4,20 @@ class ChatsController < ApplicationController
   end
 
   def create
-    Chat.create(create: params[:message])
-    redirect_to action: :index
+    chat = Chat.create(message: params[:message])
+    render json:{ chat: chat }
+  end
+
+  def checked
+    chat = Chat.find(params[:id])
+    if chat.checked 
+      chat.update(checked: false)
+    else
+      chat.update(checked: true)
+    end
+
+    item = Chat.find(params[:id])
+    render json: { chat: item }
   end
 
   #def new
