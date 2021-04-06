@@ -6,7 +6,8 @@ class ChatsController < ApplicationController
   end
  
   def show
-    @camppost = Camppost.find(params[:id])
+    @camppost = Camppost.find(params[:camppost_id])
+    #@camppost = Camppost.find(params[:id])
     @chat = Chat.new
     @chats = @camppost.chats.order(id: "DESC")
   end
@@ -25,17 +26,6 @@ class ChatsController < ApplicationController
     render :index
    end
   end
-  #def checked
-    #chat = Chat.find(params[:id])
-    #if chat.checked 
-     # chat.update(checked: false)
-    #else
-     # chat.update(checked: true)
-    #end
-
-    #item = Chat.find(params[:id])
-    #render json: { chat: item }
-  #end
 
 private
 
