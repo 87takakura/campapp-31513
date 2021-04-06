@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :users 
     resources :campposts do
       resources :comments
+      resources :chats
     end
    
-  resources :chats
 
 
   end

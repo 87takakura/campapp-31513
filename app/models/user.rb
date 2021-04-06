@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
  has_many :campposts, dependent: :destroy
  has_many :comments, dependent: :destroy      
- #has_many :chats, dependent: :destroy
+ has_many :chats, dependent: :destroy
 
 
  has_one_attached :iamge
