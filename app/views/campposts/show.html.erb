@@ -99,8 +99,10 @@
 
 
 
+
    <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "campppost-red-btn" %>
-
-
+   <% if user_signed_in? %>
+   <%= link_to "チャットページへ", camppost_chat_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
+   <% end %>
         </tr>
       </tbody>

@@ -22,7 +22,7 @@ class CamppostsController < ApplicationController
   def create
    @camppost = Camppost.new(camppost_params)
      if @camppost.save
-      redirect_to camppost_path(@camppost)
+      redirect_to camppost_chat_path
      else
       redirect_to root_path
      end

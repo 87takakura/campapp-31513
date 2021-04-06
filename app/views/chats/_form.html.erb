@@ -1,0 +1,5 @@
+<%= form_with( model: [@camppost, @chat], url: camppost_chats_path(@camppost) ) do |form| %>
+<%#= form_with(model: [@camppost, @chat], local: true) do |form| %>
+ <%= form.text_field :message , id: "message"%>
+ <%= form.submit '投稿する' , id: "submit" %>
+<% end %>

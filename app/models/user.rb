@@ -5,10 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
  has_many :campposts, dependent: :destroy
- #has_many :comments         
- #has_many :chats
- has_many :comments      
-  
+ has_many :comments, dependent: :destroy      
+ has_many :chats, dependent: :destroy
+
 
  has_one_attached :iamge
 
