@@ -4,6 +4,7 @@ FactoryBot.define do
     information { "アアアアアアアアアアアア" }
     prefecture_id { 2 }
     city { '北海道青森市岩手町1丁目2-3' }
+    campsitename {'Aサイト'}
     watersupply_id { 2 }
     outlet_id { 2 }
     fire_id { 2 }

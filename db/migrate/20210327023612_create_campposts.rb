@@ -6,6 +6,7 @@ class CreateCampposts < ActiveRecord::Migration[6.0]
       t.integer :prefecture_id, null: false
       t.text :city, null: false
       t.references :user, null: false, foreign_key: true
+      t.string :campsitename
       t.integer :watersupply_id, null: false
       t.integer :outlet_id, null: false
       t.integer :fire_id, null: false

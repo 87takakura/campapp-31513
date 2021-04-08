@@ -1,0 +1,77 @@
+.camppost-up-contents {
+  background-color: #f5f5f5;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.camppost-up-top-message {
+  font-size: 30px;
+  color: #808080
+}
+
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.campposts-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+
+.phone-number {
+  width: 100%;
+  padding: 14px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.actions {
+margin-top: 5vh;
+}
+
+
+.btn {
+  background: #808080;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+  width: 90%;
+  height: 50px;
+  font-size: 18px;
+  margin-bottom: 4vh;
+}
+
+.back {
+  background: #808080;
+  border: 1px solid #FFFFFF;
+  color: #fff;
+ // width: 70%;
+  height: 50px;
+  padding: 10px 20px;
+  //padding-left: 
+  margin-bottom: 4vh;
+}
+
+.back-letter {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

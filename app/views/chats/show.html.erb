@@ -1,7 +1,18 @@
+<div class="camppost-chats">
 
+<div class="chatpage-info">
+ 投稿者とのチャットページ
+</div>
+
+
+<div class="messega-top">
+ メッセージを投稿しよう</h1>
+</div>
 
 <%= render partial: 'chats/form', locals: { chat: @chat, camppost: @camppost } %>
 
  <li id="comments_area">
  <%= render partial: 'chats/index', locals: { chats: @chats } %>
 </li>
+
+</div>

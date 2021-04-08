@@ -1,0 +1,33 @@
+.shared-header {
+  background: #aaa;
+  border: 1px solid #aaa;
+  padding: 20px 35%;
+  text-decoration: none;
+}
+
+
+.top-box {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+
+.bottom-box {
+  display: flex;
+  justify-content: space-between
+  }
+  
+
+.home-box {
+display: flex;
+justify-self: start; 
+  }
+
+.user-box {
+
+ // display: flex;
+  //justify-content: space-around;
+ // margin-bottom: 2vh;
+  }
+  
