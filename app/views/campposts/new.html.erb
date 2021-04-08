@@ -1,57 +1,114 @@
-<h1>Campposts#new</h1>
-<p>Find me in app/views/campposts/new.html.erb</p>
-
+<div class="camppost-up-contents">
+ <div class="camppost-up-top-message">
+ あなたの紹介するキャンプ場情報を入力して下さい！
+ </div>
     <%= form_with(model: @camppost, local: true) do |f| %>
 
-   <%="記事名"%>
-   <%= f.text_area :name, class:"items-text", id:"camppost-name", placeholder:"記事名（必須 40文字まで)", maxlength:"40" %>
+   <div class="camppost-new">
+    <div class= "caamppost-send-main"> 
+          <div class="camppost-information">
+
+     <div class="weight-bold-text">
+      <%="キャンプ場名"%>
+      <%= f.text_area :name, class:"campposts-text", id:"camppost-name", placeholder:"キャンプ場名（必須 40文字まで)", maxlength:"40" %>
+     </div> 
+      
+      
+       <div class="img-upload">
+         <div class="weight-bold-text">
+           <span class="indispensable">画像</span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image, id:"camppost-image" %>
+         </div>
+       </div>
    
-   
-   
-   
-       <%# 出品画像 %>
-  <%#%>  <div class="img-upload">
-      <div class="weight-bold-text">
-        記事画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"camppost-image" %>
-      </div>
-    </div>
+       <div class="camppost-explain">
+        <div class="weight-bold-text">
+         <%="紹介文"%> 
+         <%= f.text_area :information, class:"campposts-text", id:"camppost-info", placeholder:"記事内容（必須 100文字まで)", rows:"7" ,maxlength:"1000" %> 
+        </div>
+       </div>
+        <div class="camppost-detail"> 
+         <div class="camppost-place-detail">          
+                     <div class="weight-bold-text">
+                      <%="県名"%>
+                      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"camppost-prefecture"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                      <%="市町村以下の住所"%>
+                      <%= f.text_area :city, class:"campposts-text", id:"camppost-city", placeholder:"市町村以下の住所", maxlength:"40" %>
+                     </div>
+                <div class="camppost-q-selects">
+                     <div class="weight-bold-text">
+                     <%="駐車場の有無"%> 
+                     <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"camppost-parking"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="トイレの有無"%>
+                     <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"select-box", id:"camppost-toilet"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="風呂の有無"%> 
+                     <%= f.collection_select(:bath_id, Bath.all, :id, :name, {}, {class:"select-box", id:"camppost-bath"}) %>
+                     </div>
+                </div>
+         </div>
+         <div class="camppost-place-detail">  
+                     <div class="weight-bold-text">
+                      <%="利用したキャンプサイト名"%>
+                      <%= f.text_area :name, class:"campposts-text", id:"camppost-name", placeholder:"キャンプサイト名（任意 10文字まで)", maxlength:"10" %>
+                     </div> 
+                <div class="camppost-q-selects">
+                     <div class="weight-bold-text">
+                     <%="水道の有無"%> 
+                     <%= f.collection_select(:watersupply_id, Watersupply.all, :id, :name, {}, {class:"select-box", id:"camppost-watersupply"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="電源の有無"%>
+                     <%= f.collection_select(:outlet_id, Outlet.all, :id, :name, {}, {class:"select-box", id:"camppost-outlet"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="焚火の可不可"%>
+                     <%= f.collection_select(:fire_id, Fire.all, :id, :name, {}, {class:"select-box", id:"camppost-fire"}) %>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="車乗入れの可不可"%>
+                     <%= f.collection_select(:cargetin_id, Cargetin.all, :id, :name, {}, {class:"select-box", id:"camppost-cargetin"}) %> 
+                     </div>
+                </div>  
+                     <div class="weight-bold-text">
+                     <%="電話番号"%> 
+                     <%= f.text_field :phone_number, class:"phone-number", id:"phone-number", placeholder:"電話番号があれば入力してください　 例）09012345678",maxlength:"11"%>
+                     </div>
+                     <div class="weight-bold-text">
+                     <%="キャンプ場公式Webサイト"%> 
+                     <%= f.text_field :web_site, class:"campposts-text", id:"url", placeholder:"キャンプ場の公式サイト（任意）" %>
+                     </div>
+ 
+         </div>
+        </div>
+              <div class="actions">
+               <div class="weight-bold-text">
+                <%= f.submit "記事投稿" ,class:"btn"%>                               
+               </div>
+              </div>
+              
+              
+
+               <div class="actions">
+                <div class="back">
+                   <%=link_to "戻る", root_path, class:"back-letter" %>
+                </div>
+               </div>
+
+              </div>
 
 
-   <%="投稿記事"%> 
-   <%= f.text_area :information, class:"items-text", id:"camppost-info", placeholder:"記事内容（必須 100文字まで)", rows:"7" ,maxlength:"1000" %> 
-   <%="県名"%>
-   <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"camppost-prefecture"}) %>
-   <%="市町村以下の住所"%>
-   <%= f.text_area :city, class:"items-text", id:"camppost-city", placeholder:"市町村以下の住所", maxlength:"40" %>
-   <%="水道の有無"%> 
-   <%= f.collection_select(:watersupply_id, Watersupply.all, :id, :name, {}, {class:"select-box", id:"camppost-watersupply"}) %>
-   <%="電源の有無"%>
-   <%= f.collection_select(:outlet_id, Outlet.all, :id, :name, {}, {class:"select-box", id:"camppost-outlet"}) %>
-   <%="焚火の可不可"%>
-   <%= f.collection_select(:fire_id, Fire.all, :id, :name, {}, {class:"select-box", id:"camppost-fire"}) %>
-   <%="車乗入れの可不可"%>
-   <%= f.collection_select(:cargetin_id, Cargetin.all, :id, :name, {}, {class:"select-box", id:"camppost-cargetin"}) %> 
-   <%="トイレの有無"%>
-   <%= f.collection_select(:toilet_id, Toilet.all, :id, :name, {}, {class:"select-box", id:"camppost-toilet"}) %>
-   <%="風呂の有無"%> 
-   <%= f.collection_select(:bath_id, Bath.all, :id, :name, {}, {class:"select-box", id:"camppost-bath"}) %>
-   <%="駐車場の有無"%> 
-   <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"camppost-parking"}) %>
-   <%="電話番号"%> 
-   <%= f.text_field :phone_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
-   <%="キャンプ場公式サイト"%> 
-   <%= f.text_field :web_site, class:"items-text", id:"url", placeholder:"キャンプ場の公式サイト（任意）" %>
-
-   <div class="actions">
-    <%= f.submit "記事投稿" %>
-  </div>
-
-
+        </div>
     <% end %>
+    </div>
+</div>

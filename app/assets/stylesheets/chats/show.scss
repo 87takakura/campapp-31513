@@ -1,0 +1,52 @@
+.camppost-chats {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 10vh 
+}
+
+.chatpage-info {
+  font-size: 50px;
+}
+
+
+.messega-top {
+  font-size: 30px;
+}
+
+.chat-post-user {
+  font-size: 15px;
+
+}
+
+.chat-content {
+  font-size: 25px;
+  background-color: #00FF00;
+  position: relative;
+  padding: 20px;
+  margin-top: 2vh;
+  border-radius: 10px;
+}
+
+.chat-content::before{
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: -15px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid  #00FF00;
+  border-left: 15px solid transparent;
+}
+
+.chat-date {
+  font-size: 5px;
+}
+
+.chat-box {
+  margin: 5vh;
+}

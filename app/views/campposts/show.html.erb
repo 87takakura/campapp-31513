@@ -1,108 +1,178 @@
-<h1>Campposts#show</h1>
-<p>Find me in app/views/campposts/show.html.erb</p>
-
-
-
+<div class="user-name">
    <th class="detail-camppost">投稿者</th>
    <td class="detail-value"><%= @camppost.user.username %></td>
-      <%= image_tag @camppost.image ,class:"item-box-img" %>
+</div>  
 
 
+<div class="place-name">
+   <th class="detail-camppost">キャンプ場名:</th>
+   <td class="detail-value"><%= @camppost.name %></td>
+</div>  
 
 
+  
+     <div class="camppost-img">
+          <div class="camppost-img-content">
 
-    <div class="item-explain-box">
+      <%= image_tag @camppost.image ,class:"camppost-box-img" %>
+     </div>
+     </div>
+
+
+     <div class="camppost-information">
       <span><%= @camppost.information %></span>
     </div>
+
+
       <tbody>
         <tr>
 
-        <span>キャンプ場情報</span>
-   <th class="detail-camppost">記事名</th>
-   <td class="detail-value"><%= @camppost.name %></td>
 
-   <th class="detail-camppost">記事内容</th>
-   <td class="detail-value"><%= @camppost.information %></td>
+        <div class="camppost-pale-and-site-information">
+         <div class="campplace-information">
+                      
+                           <div class="campplace-site-info-head">
+                            <span>キャンプ場情報</span>
+                            </div>
 
-   <th class="detail-camppost">県</th>
-   <td class="detail-value"><%= @camppost.prefecture.name %></td>
+                  <div class="camppost-info">
+                       <th class="detail-camppost">都道府県:</th>
+                       <td class="detail-value"><%= @camppost.prefecture.name %></td>
+                    </div>
 
-   <th class="detail-camppost">市町村以下の住所</th>
-   <td class="detail-value"><%= @camppost.city %></td>
+                    <div class="camppost-info">
+                       <th class="detail-camppost">市町村以下の住所:</th>
+                       <td class="detail-value"><%= @camppost.city %></td>
+                     </div>
 
-    <th class="detail-camppost">電話番号</th>
-   <td class="detail-value"><%= @camppost.phone_number %></td>
+                      <div class="camppost-info">                
+                        <th class="detail-camppost">電話番号:</th>
+                       <td class="detail-value"><%= @camppost.phone_number %></td>
+                       </div>
+   
+                    <div class="camppost-info">
+                       <th class="detail-camppost">公式webサイト:</th>
+                       <td class="detail-value"><%= @camppost.web_site %></td>
+                       </div>
+                 
+                    <div class="camppost-info">
+                       <th class="detail-camppost">トイレの有無:</th>
+                       <td class="detail-value"><%= @camppost.toilet.name %></td>
+                     </div>
 
-   <th class="detail-camppost">公式webサイト</th>
-   <td class="detail-value"><%= @camppost.web_site %></td>
+                    <div class="camppost-info">                   
+                       <th class="detail-camppost">風呂の有無:</th>
+                       <td class="detail-value"><%= @camppost.bath.name %></td>
+                     </div>
 
-   <th class="detail-camppost">トイレの有無</th>
-   <td class="detail-value"><%= @camppost.toilet.name %></td>
+                     <div class="camppost-info">                                   
+                       <th class="detail-camppost">駐車場の有無:</th>
+                       <td class="detail-value"><%= @camppost.parking.name %></td>
+                     </div>
+      
+          </div>           
+                    
+         <div class="ampplace-site-information">
+   
+                       <div class="campplace-site-info-head">               
+                            <span>キャンプサイト情報</span>
+                       </div>
+ 
+          <div class="camppost-info">                                           
+            <th class="detail-camppost">水道の有無:</th>
+            <td class="detail-value"><%= @camppost.watersupply.name %></td>
+          </div>
 
-   <th class="detail-camppost">風呂の有無</th>
-   <td class="detail-value"><%= @camppost.bath.name %></td>
+          <div class="camppost-info">                                           
+            <th class="detail-camppost">電源の有無:</th>
+            <td class="detail-value"><%= @camppost.outlet.name %></td>
+          </div>
 
-   <th class="detail-camppost">駐車場の有無</th>
-   <td class="detail-value"><%= @camppost.parking.name %></td>
+           <div class="camppost-info">                                                 
+            <th class="detail-camppost">焚火の可不可:</th>
+            <td class="detail-value"><%= @camppost.fire.name %></td>
+          </div>
+     
+             <div class="camppost-info">                                                  
+            <th class="detail-camppost">車乗入れの可不可:</th>
+            <td class="detail-value"><%= @camppost.cargetin.name %></td>
+                   </div>
 
-
-        <span>キャンプサイト情報</span>
-
-
-
-   <th class="detail-camppost">水道の有無</th>
-   <td class="detail-value"><%= @camppost.watersupply.name %></td>
-
-   <th class="detail-camppost">電源の有無</th>
-   <td class="detail-value"><%= @camppost.outlet.name %></td>
-
-   <th class="detail-camppost">焚火の可不可</th>
-   <td class="detail-value"><%= @camppost.fire.name %></td>
-
-   <th class="detail-camppost">車乗入れの可不可</th>
-   <td class="detail-value"><%= @camppost.cargetin.name %></td>
+          </div>           
+        </div> 
 
 
 
-    <% if user_signed_in? %>
+
+
+
+
+
+
+<div class="camppost-edit-delete">
+     <% if user_signed_in? %>
      <% if current_user.id == @camppost.user.id %>
-       <%= link_to "記事の編集", edit_camppost_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
-       <%= link_to "記事の削除", camppost_path(@camppost.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "camppost-destroy" %>
-    <% else %>
-       <%#= link_to "投稿者へチャットメッセージを送る", camppost_orders_path(@item.id), method: :get, class:"camppost-red-btn"%>
+       <%= link_to "記事の編集", edit_camppost_path(@camppost.id), method: :get, class: "campppost-link-btn" %>
+       <%= link_to "記事の削除", camppost_path(@camppost.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "campppost-link-btn" %>
      <% end %>
     <% end %>
 
-  <% @camppost.comments.each do |comment| %>
-   <div>
-    <%= comment.user.username %>
-    <%= comment.message %>
-   </div>
+</div>
 
-    <% if comment.user == current_user %>
-      <%= link_to "コメントの削除", [comment.camppost, comment], method: :delete, class: "campppost-red-btn" %>
-    <% end %>
 
+<div class="comments-explain">
+<div class="comments-explain-text">
+
+ 記事に対するコメントを投稿しましょう！
+</div>
+</div>
+
+<div class="posted-comments">
+ <div class="posted-comment">
+   <% @camppost.comments.each do |comment| %>
+<div class="posted-comments-area">
+
+   <div class="posted-comments-box">
+    <div class="posted-comments-username"> 
+     <%= comment.user.username %>
+    </div>
    
+    <div class="posted-comments-message">
+     「<%= comment.message %>」
+    </div>
+ 
+    <div class="posted-comments-delete">
+     <% if comment.user == current_user %>
+       <%= link_to "コメントの削除", [comment.camppost, comment], method: :delete, class: "campppost-red-btn" %>
+     <% end %>  
+    </div>
+   </div> 
+
+
+ </div>
+
+
   <% end %>
+  
+  </div>
+</div>
+
+
 
 
   <%= form_with model: [@camppost, @comment], local: true do |f| %>
-
-   <%= f.text_field :message, placeholder:"コメントを投稿して下さい" %>
-   <%= f.submit "コメントを投稿する" %>
-
+   <div class="comment-post">
+   <%= f.text_field :message, placeholder:"コメントを投稿して下さい", class: "comment-post-input" %>
+   <%= f.submit "コメントを投稿する", class: "comment-post-send" %>
+   </div>
   <% end %>
 
 
 
 
-
-
-
-   <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "campppost-red-btn" %>
+<div class="link-to-user">
+   <%= link_to "ユーザーのページへ", user_path(@camppost.user), class: "button is_warning is-light" %>
    <% if user_signed_in? %>
-   <%= link_to "チャットページへ", camppost_chat_path(@camppost.id), method: :get, class: "campppost-red-btn" %>
+   <%= link_to "チャットページへ", camppost_chat_path(@camppost.id), method: :get, class: "button is_warning is-light" %>
    <% end %>
-        </tr>
-      </tbody>
+</div>

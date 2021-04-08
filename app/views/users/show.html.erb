@@ -1,20 +1,53 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
 
-<h1 class="title">
-  マイページ
-</h1>
+<div class='main'>
 
-<%= @user.username %>
-
-
-  <%= link_to "記事投稿", new_camppost_path, class: "button is_warning is-light" %>
+ <h1 class="title">
+   <%= @user.username %>
+   <span>さんのマイページ</span>
+ </h1>
+  
 
 
-  <%= link_to "ユーザー情報の編集", edit_user_path(@user), class: "button is_warning is-light" %>
+<div class="mypage-links">
+ <div class="link-box">
+ <%= link_to "新規記事投稿", new_camppost_path, class: "button is_warning is-light" %>
+ </div>
+ <% if current_user == @user  %>
+  <div class="link-box">
+   <%= link_to "ユーザー情報の編集", edit_user_path(@user), class: "button is_warning is-light" %>
+  </div>
+ <% end %>
+</div>
 
-<% @user.campposts.each do |camppost| %>
-        <%= image_tag camppost.image.variant(resize: '400x400'), class: 'camppost-image' if camppost.image.attached? %>
+
+
+ <ul class='camppost-lists'>
+   <% @user.campposts.each do |camppost| %>
+  <div class="campposts-box">
+   <div class='camppost-img-content'>
+     <%= image_tag camppost.image.variant(resize: '320x350'), class: 'camppost-image' if camppost.image.attached? %>
+   </div>  
+
+      <div class='camppost-info'>
+        <span>都道府県名:<%= camppost.prefecture.name %></span>  
+      </div>
+
+      <div class='camppost-info'>
+        <span>キャンプ場名:<%= camppost.name %></span>
+      </div>
+ 
+      <div class='link'>
         <%= link_to"記事詳細へ", camppost_path(camppost) %>
+      </div>
 
-<% end %>
+
+
+
+   </div>
+
+  <% end %>
+ </ul> 
+
+
+
+</div>

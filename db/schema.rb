@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_211529) do
     t.integer "prefecture_id", null: false
     t.text "city", null: false
     t.bigint "user_id", null: false
+    t.string "campsitename"
     t.integer "watersupply_id", null: false
     t.integer "outlet_id", null: false
     t.integer "fire_id", null: false

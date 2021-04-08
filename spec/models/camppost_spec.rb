@@ -73,6 +73,10 @@ RSpec.describe Camppost, type: :model do
       it 'すべての値が正しく入力されていれば保存できる' do
         expect(@camppost).to be_valid
       end
+      it 'campsitenameは空でも保存できる' do
+        @camppost.phone_number = ''
+        expect(@camppost).to be_valid
+      end
       it 'phone_numberは空でも保存できる' do
         @camppost.phone_number = ''
         expect(@camppost).to be_valid

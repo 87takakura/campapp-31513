@@ -1,7 +1,4 @@
-<h1>Chats#index</h1>
-<p>Find me in app/views/chats/index.html.erb</p>
- 
- <h1>AjaxApp</h1>
+
 <%#= form_with model: @camppost, url:camppost_chats_path(@camppost) , method: :post,id: "form",local: false do |form| %>
 <%= form_with( model: [@camppost, @chat], url: camppost_chats_path(@camppost), method: :get ) do |form| %>
 
@@ -10,15 +7,17 @@
 </div>
 
 <% chats.each do |chat| %>
-   <div class="chat-date">
-        投稿者：<%= chat.user.username %>
-   </div>
-    <div class="chat-date">
-        投稿日時：<%= chat.created_at %>
+  <div class="chat-box">
+   <div class="chat-post-user">
+        <%= chat.user.username %>
    </div>
    <div class="chat-content">
         <%= chat.message %>
    </div>
+       <div class="chat-date">
+        投稿日時：<%= chat.created_at %>
+   </div>
+  </div>
 <% end %> 
 
 <% end %>

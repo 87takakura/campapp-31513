@@ -1,0 +1,112 @@
+.mypage-links {
+  background: #FFFF00;
+  border: 1px solid #aaa;
+  padding: 15px 35%;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.post-top {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.page-title {
+  font-size: 6vh;
+  line-height: 40px;
+  color: blue;
+  margin-left: 10vw;;
+}
+
+
+
+
+.page-comment1 {
+  font-size: 3vh;
+  line-height: 40px;
+  color: blue;
+  padding: 3vh 0vh;
+  margin-left: 5vw;;
+}
+
+.page-comment2 {
+  font-size: 3vh;
+  line-height: 40px;
+  color: blue;
+  padding: 3vh 0vh;
+}
+
+
+.camppost-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20vh 0vh;
+}
+
+
+.camppost-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10vh 40vh 70px;
+}
+
+.camppost-img-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.camppost-edit-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.comment-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.link-to-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campppost-link-btn{
+  margin: 4vh;
+
+}
+
+
+.posted-comments {
+  //display: flex;
+  //justify-content: center;
+}
+
+.posted-comments-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2vh;
+}
+
+.camppost-info {
+  font-size: 15px;
+}
