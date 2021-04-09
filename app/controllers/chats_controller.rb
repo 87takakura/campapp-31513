@@ -22,9 +22,8 @@ class ChatsController < ApplicationController
   def destroy
     @camppost = Camppost.find(params[:camppost_id])
     @chat = Chat.find(params[:id])
-   if @chat.destroy
+    @chat.destroy
     render :index
-   end
   end
 
 private
