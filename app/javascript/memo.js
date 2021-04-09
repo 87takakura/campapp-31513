@@ -3,7 +3,7 @@ function memo() {
   submit.addEventListener("click", (e) => {
     const formData = new FormData(document.getElementById("form"));
     const XHR = new XMLHttpRequest();
-    XHR.open("POST", url:camppost_chats_path, true);
+    XHR.open("POST", "/chats/#{chat.id}", true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {

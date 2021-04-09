@@ -12,11 +12,15 @@ class ChatsController < ApplicationController
   end
 
   def create
-    @camppost = Camppost.find(params[:camppost_id])
-    @chat = Chat.new(chat_params)
-    @chat.save
+    camppost = Camppost.find(params[:camppost_id])
+    chat = Chat.new(chat_params)
+    render json:{ post: post}
+
+
+
+    #chat.save
       #redirect_to camppost_chat_path
-      render :index
+     # render :show
   end
 
   def destroy
