@@ -77,7 +77,13 @@
                        <div class="campplace-site-info-head">               
                             <span>キャンプサイト情報</span>
                        </div>
- 
+       
+          <div class="camppost-info">
+           <th class="detail-camppost">キャンプサイト名:</th>
+           <td class="detail-value"><%= @camppost.campsitename %></td>
+          </div>  
+
+
           <div class="camppost-info">                                           
             <th class="detail-camppost">水道の有無:</th>
             <td class="detail-value"><%= @camppost.watersupply.name %></td>
