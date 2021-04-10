@@ -52,7 +52,7 @@ https://campapp-31513.herokuapp.com/
 ユーザー情報を登録しアカウントを作成する
 
 記事投稿機能
-[![Image from Gyazo](https://i.gyazo.com/e58ae63760700b55bb1390921078c3e1.gif)](https://gyazo.com/e58ae63760700b55bb1390921078c3e1)
+[![Image from Gyazo](https://i.gyazo.com/53096df9bc02ea5a8f261d0319bfb90d.gif)](https://gyazo.com/53096df9bc02ea5a8f261d0319bfb90d)
 必要情報を記入し、キャンプ場紹介の記事を投稿する
 
 記事削除機能
