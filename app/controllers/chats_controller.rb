@@ -1,23 +1,26 @@
 class ChatsController < ApplicationController
   def index
     @camppost = Camppost.find(params[:camppost_id])
-    @chat = Chat.new
-    @chats = @camppost.chats.order(id: "DESC")
+    @chat = Chat.new(params[:id])
+    @chats = @camppost.chats.order(created_at: "DESC")
   end
  
   def show
-    @camppost = Camppost.find(params[:id])
-    @chat = Chat.new
-    @chats = @camppost.chats.order(id: "DESC")
+    @camppost = Camppost.find(params[:camppost_id])
+    @chat = Chat.find(params[:id])
+    @chats = @camppost.chats.order(created_at: "DESC")
   end
 
   def create
     @camppost = Camppost.find(params[:camppost_id])
     @chat = Chat.new(chat_params)
     #render json:{ post: post}
-    @chat.save
-      #redirect_to camppost_chat_path
-     render :show
+    if @chat.save
+      redirect_to camppost_chats_path(@camppost)
+    else 
+      render :show
+     #render :show
+    end
   end
 
   def destroy
