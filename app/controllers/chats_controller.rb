@@ -1,8 +1,5 @@
 class ChatsController < ApplicationController
   def index
-    @camppost = Camppost.find(params[:camppost_id])
-    @chat = Chat.new(params[:id])
-    @chats = @camppost.chats.order(created_at: "DESC")
   end
  
   def show
@@ -16,10 +13,9 @@ class ChatsController < ApplicationController
     @chat = Chat.new(chat_params)
     #render json:{ post: post}
     if @chat.save
-      redirect_to camppost_chats_path(@camppost)
+      redirect_to camppost_chats_path
     else 
       render :show
-     #render :show
     end
   end
 
