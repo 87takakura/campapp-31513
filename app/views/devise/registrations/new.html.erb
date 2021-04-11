@@ -50,6 +50,18 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, placeholder:"同じパスワードを入力して下さい", autocomplete: "new-password" %>
   </div>
+  
+   <div class="weight-bold-text">
+    <%= f.label :prefecture %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"user-prefecture"}) %>
+   </div>
+
+
+
+    <div class="field">
+    <%= f.label :profile %>
+    <%= f.text_field :profile, placeholder:"ユーザー情報を入力してください" %>
+  </div>
 
 
 

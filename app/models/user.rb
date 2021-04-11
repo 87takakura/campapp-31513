@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,6 +10,7 @@ class User < ApplicationRecord
  has_many :comments, dependent: :destroy      
  has_many :chats, dependent: :destroy
 
+ belongs_to :prefecture
 
  has_one_attached :image
 

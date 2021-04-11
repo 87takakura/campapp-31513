@@ -22,4 +22,5 @@ class Prefecture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :campposts
+  has_many :users
 end
