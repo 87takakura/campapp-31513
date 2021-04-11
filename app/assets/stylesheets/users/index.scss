@@ -10,12 +10,21 @@
 .user-image {
   margin: 20px;
   width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
 }
 
 .usersname {
   margin-bottom: 2vh;
-  margin-left: 6vw;
+  margin-right: 8vw;
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
 }
 
 .user-lists {
