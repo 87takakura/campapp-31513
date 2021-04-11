@@ -8,11 +8,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :profile_image_id 
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.string :firstname, null: false
-      t.string :lastname, null: false
-      t.string :katakanafirstname, null: false
-      t.string :katakanalastname, null: false
-      t.date :birthday,              null: false
+      #t.string :firstname, null: false
+      #t.string :lastname, null: false
+      #t.string :katakanafirstname, null: false
+      #t.string :katakanalastname, null: false
+      #t.date :birthday,              null: false
 
 
       ## Recoverable

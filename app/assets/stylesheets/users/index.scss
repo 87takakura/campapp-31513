@@ -7,29 +7,37 @@
   padding-bottom: 40vh 
 }
 
-.user-image {
-  margin: 20px;
-  width: 50%;
+.user-image-unexist {
+  margin: 0px;
+}
+
+
+
+.user-img {
+  width: 20%;
+
+}
+
+
+.usersname-box {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
 
 }
 
+
+
+
 .usersname {
   margin-bottom: 2vh;
-  margin-right: 8vw;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-
+  font-size: 30px;
 }
 
 .user-lists {
   display: flex;
-  justify-content: center
+  justify-content: space-between;
+  align-items: center;
 }
 
 

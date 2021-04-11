@@ -59,43 +59,8 @@ RSpec.describe User, type: :model do
     end
     # 本人確認情報のexampleの整理
     context '新規登録できるとき' do
-      it 'ユーザー本名は、全角（漢字・ひらがな・カタカナ）であれば登録できる' do
-        @user.firstname = '亜あア'
-        @user.lastname = '亜あア'
-        expect(@user).to be_valid
-      end
-      it 'ユーザー本名のフリガナは、全角（カタカナ）であれば登録できる' do
-        @user.firstname = '亜あア'
-        @user.lastname = '亜あア'
-        expect(@user).to be_valid
-      end
     end
     context '新規登録できないとき' do
-      it 'firstnameが存在しなければ登録できない' do
-        @user.firstname = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Firstname can't be blank")
-      end
-      it 'lastnameが存在しなければ登録できない' do
-        @user.lastname = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Lastname can't be blank")
-      end
-      it 'katakanafirstnameが存在しなければ登録できない' do
-        @user.katakanafirstname = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Katakanafirstname can't be blank")
-      end
-      it 'katakanalastnameが存在しなければ登録できない' do
-        @user.katakanalastname = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Katakanalastname can't be blank")
-      end
-      it 'birthdayが存在しなければ登録できない' do
-        @user.birthday = ''
-        @user.valid?
-        expect(@user.errors.full_messages).to include("Birthday can't be blank")
-      end
     end
   end
 end
