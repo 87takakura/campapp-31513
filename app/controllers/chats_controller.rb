@@ -12,13 +12,10 @@ class ChatsController < ApplicationController
   end
 
   def create
-    camppost = Camppost.find(params[:camppost_id])
-    chat = Chat.new(chat_params)
+    @camppost = Camppost.find(params[:camppost_id])
+    @chat = Chat.new(chat_params)
     #render json:{ post: post}
-
-
-
-    chat.save
+    @chat.save
       #redirect_to camppost_chat_path
      render :show
   end
