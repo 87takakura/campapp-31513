@@ -14,7 +14,7 @@
  </div>
  <% if current_user == @user  %>
   <div class="link-box">
-   <%= link_to "ユーザー情報の編集", edit_user_path(@user), class: "button is_warning is-light" %>
+   <%= link_to "ユーザー情報の編集", edit_user_registration_path, class: "button is_warning is-light" %>
   </div>
  <% end %>
 </div>
