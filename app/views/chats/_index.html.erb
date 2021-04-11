@@ -1,7 +1,7 @@
 
-<%#= form_with model: @camppost, url:camppost_chats_path(@camppost) , method: :post,id: "form",local: false do |form| %>
-<%= form_with model: [@camppost, @chat], local: true do |form| %>
 
+<%#= form_with model: @camppost, url:camppost_chats_path(@camppost) , method: :post,id: "form",local: false do |form| %>
+<%= form_with( model: [@camppost, @chat], url: camppost_chats_path(@camppost), method: :get ) do |form| %>
 
 <div id="list">
 </div>

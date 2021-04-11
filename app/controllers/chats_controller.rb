@@ -13,7 +13,7 @@ class ChatsController < ApplicationController
     @chat = Chat.new(chat_params)
     #render json:{ post: post}
     if @chat.save
-      redirect_to camppost_chats_path
+      redirect_to camppost_chat_path(id:@camppost)
     else 
       render :show
     end
