@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
  
   def show
     @camppost = Camppost.find(params[:camppost_id])
-    @chat = Chat.find(params[:id])
+    @chat = Chat.new
     @chats = @camppost.chats.order(created_at: "DESC")
   end
 
