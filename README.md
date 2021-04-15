@@ -52,7 +52,7 @@ https://campapp-31513.herokuapp.com/
 県名などの情報で記事を検索できるようにする
 
 ## データベース設計	ER図等を添付。
-[![Image from Gyazo](https://i.gyazo.com/33e331d84382386806a63c162e089168.png)](https://gyazo.com/33e331d84382386806a63c162e089168)
+[![Image from Gyazo](https://i.gyazo.com/2665849e4d7d05b8b10655edf0e75d97.png)](https://gyazo.com/2665849e4d7d05b8b10655edf0e75d97)
 
 
 
@@ -88,12 +88,15 @@ https://campapp-31513.herokuapp.com/
 | city            | text        | null: false                  |
 | user            | references  | null: false foreign_key:true |
 | water_supply_id | integer     | null: false                  |
-| socket_id       | integer     | null: false                  |
+| outlet_id       | integer     | null: false                  |
+| fire_id         | integer     | null: false                  |
+| cargetin_id     | integer     | null: false                  |
 | toilet_id       | integer     | null: false                  |
 | bath_id         | integer     | null: false                  |
 | parking_id      | integer     | null: false                  |
 | phone_number    | integer     |
 | web_site        | strings     | 
+
 ### Association
 
 - belongs_to :user
