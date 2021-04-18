@@ -44,7 +44,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, placeholder:"同じパスワードを入力して下さい", autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, placeholder:"同じパスワードを入力", autocomplete: "new-password" %>
   </div>
   
    <div class="weight-bold-text">
@@ -59,7 +59,7 @@
      <div class="user-profile">
        自己紹介文を入力してください
      </div>
-      <%= f.text_field :profile, placeholder:"ユーザー情報を入力してください" %>
+      <%= f.text_area :profile, class:"useer-profile-box", placeholder:"ユーザー情報を入力してください" %>
    </div>
 
 

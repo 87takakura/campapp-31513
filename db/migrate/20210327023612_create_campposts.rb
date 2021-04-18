@@ -14,7 +14,7 @@ class CreateCampposts < ActiveRecord::Migration[6.0]
       t.integer :toilet_id, null: false
       t.integer :bath_id, null: false
       t.integer :parking_id, null: false
-      t.integer :phone_number
+      t.string :phone_number
       t.string :web_site
       t.timestamps
     end

@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_04_01_211529) do
     t.integer "toilet_id", null: false
     t.integer "bath_id", null: false
     t.integer "parking_id", null: false
-    t.integer "phone_number"
+    t.string "phone_number"
     t.string "web_site"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

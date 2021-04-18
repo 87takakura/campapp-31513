@@ -20,9 +20,9 @@ class User < ApplicationRecord
         end
             
   
- has_many :campposts, dependent: :destroy
- has_many :comments, dependent: :destroy      
- has_many :chats, dependent: :destroy
+ has_many :campposts
+ has_many :comments      
+ has_many :chats
 
  belongs_to :prefecture
 
