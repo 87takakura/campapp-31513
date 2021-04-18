@@ -38,20 +38,19 @@ https://campapp-31513.herokuapp.com/
 スプレッドシートにまとめた要件定義を記述。
 
 ユーザー管理機能
-[![Image from Gyazo](https://i.gyazo.com/f961ceb13a9ba066262cecc61cfded1b.png)](https://gyazo.com/f961ceb13a9ba066262cecc61cfded1b)
 ユーザー情報を登録しアカウントを作成する
+[![Image from Gyazo](https://i.gyazo.com/7a1681a1550c17c16108be99e77b6ca6.gif)](https://gyazo.com/7a1681a1550c17c16108be99e77b6ca6)
+
 
 記事投稿機能
-
 必要情報を記入し、キャンプ場紹介の記事を投稿する
-
-実装した機能についての画像やGIFおよびその説明	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記述。画像はGyazoで、GIFはGyazoGIFで撮影すること。
+[![Image from Gyazo](https://i.gyazo.com/458a5f3aa4bdb2f5d8df94f8acd59201.gif)](https://gyazo.com/458a5f3aa4bdb2f5d8df94f8acd59201)
 
 ##実装予定の機能	
 カテゴリによる検索機能
 県名などの情報で記事を検索できるようにする
 
-## データベース設計	ER図等を添付。
+## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/2665849e4d7d05b8b10655edf0e75d97.png)](https://gyazo.com/2665849e4d7d05b8b10655edf0e75d97)
 
 
