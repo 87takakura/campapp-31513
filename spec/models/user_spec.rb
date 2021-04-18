@@ -26,6 +26,12 @@ RSpec.describe User, type: :model do
         @user.password = @user.password_confirmation
         expect(@user).to be_valid
       end
+      it 'prefectureのidが2~48なら保存できる' do
+        @user.prefecture_id = 2
+        expect(@user).to be_valid
+      end
+
+
     end
     context '新規登録できないとき' do
       it 'ニックネームが空では登録できない' do
@@ -43,7 +49,7 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include('Email has already been taken')
+        expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
@@ -56,11 +62,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
-    end
-    # 本人確認情報のexampleの整理
-    context '新規登録できるとき' do
-    end
-    context '新規登録できないとき' do
+      it 'prefectureが1では保存できない' do
+        @user.prefecture_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Prefecture is out of setting range")
+      end
     end
   end
 end

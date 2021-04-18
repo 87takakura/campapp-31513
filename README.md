@@ -51,7 +51,7 @@ https://campapp-31513.herokuapp.com/
 カテゴリによる検索機能
 県名などの情報で記事を検索できるようにする
 
-## データベース設計	ER図等を添付。
+## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/2665849e4d7d05b8b10655edf0e75d97.png)](https://gyazo.com/2665849e4d7d05b8b10655edf0e75d97)
 
 

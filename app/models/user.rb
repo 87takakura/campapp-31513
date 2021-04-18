@@ -28,12 +28,16 @@ class User < ApplicationRecord
 
  has_one_attached :image
 
+
+
  validates :username, presence: true
  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
  validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
 
- # validates :email, uniqueness: true
- # validates :encrypted_password, uniqueness: true
+ validates :email, uniqueness: true
 
+ validates :prefecture_id, numericality: { other_than: 1, message: "is out of setting range" }
+
+ validates :encrypted_password, uniqueness: true
 
 end

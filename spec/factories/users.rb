@@ -5,6 +5,6 @@ FactoryBot.define do
     password { "1a" + Faker::Internet.password(min_length: 6) }
     password_confirmation { password }
     prefecture_id { 2 }
-   profile { 'アイウエオaiueo' } 
+    profile { 'アイウエオaiueo' } 
   end
 end

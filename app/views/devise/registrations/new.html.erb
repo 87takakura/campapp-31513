@@ -1,13 +1,20 @@
-<h2>新規登録</h2>
+<div class="registration">
+ <div class="registration-new">
+ 
+  <h2>新規登録</h2>
+  
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="img-upload">
          <div class="weight-bold-text">
            <span class="indispensable">User-img</span>
          </div>
          <div class="click-upload">
+           <p>
+             あなたのアイコン画像を登録してください(任意)
+           </p>
            <p>
              クリックしてファイルをアップロード
            </p>
@@ -18,8 +25,8 @@
 
 
   <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username, placeholder:"ユーザー名", autofocus: true%>
+    <%= f.label :Username %><br />
+    <%= f.text_field :username, placeholder:"ユーザー名", autofocus: true, autocomplete: "user"%>
   </div>
 
   <div class="field">
@@ -28,7 +35,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password %><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -41,22 +48,27 @@
   </div>
   
    <div class="weight-bold-text">
-    <%= f.label :prefecture %>
+    <%= f.label :prefecture %><br />
     <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"user-prefecture"}) %>
    </div>
 
 
 
     <div class="field">
-    <%= f.label :profile %>
-    <%= f.text_field :profile, placeholder:"ユーザー情報を入力してください" %>
-  </div>
+     <%= f.label :profile %>
+     <div class="user-profile">
+       自己紹介文を入力してください
+     </div>
+      <%= f.text_field :profile, placeholder:"ユーザー情報を入力してください" %>
+   </div>
 
 
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="actions">
+     <%= f.submit "Sign up",class:"register-btn" %>
+    </div>
+    <% end %>
+ </div>
+</div>
 
 <%= render "devise/shared/links" %>
