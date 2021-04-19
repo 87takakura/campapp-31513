@@ -107,6 +107,43 @@
   margin: 2vh;
 }
 
+
+
+.user-info {
+  display: flex;
+  justify-content: center;
+ }
+
+ .user-info-box {
+  margin-left: 10vw;
+ }
+
+
 .camppost-info {
   font-size: 15px;
+}
+
+.user-img-content {
+  margin-left: 5vw;
+}
+
+.user-info-head {
+  margin-left: 8vw;
+  font-size: 20px;
+}
+
+.user-email {
+  margin-left: 4vw;
+  font-size: 20px;
+}
+
+.user-prefecture {
+  margin-left: 4vw;
+  font-size: 20px;
+}
+
+.user-profile {
+  font-size: 20px;
+  margin-left: 4vw;
+  width: 30vw;
 }
