@@ -55,8 +55,13 @@ https://campapp-31513.herokuapp.com/
 
 
 
-##ローカルでの動作方法	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記述。この時、アプリケーション開発に使用した環境を併記することを忘れないこと（パッケージやRubyのバージョンなど）。
-
+## ローカルでの動作方法	
+git clone https://github.com/87takakura/campapp-31513.git
+cd campapp-31513
+bundle install
+rails db:create
+rails db:migrate
+rails s
 
 
 
