@@ -56,12 +56,12 @@ https://campapp-31513.herokuapp.com/
 
 
 ## ローカルでの動作方法	
-git clone https://github.com/87takakura/campapp-31513.git
-cd campapp-31513
-bundle install
-rails db:create
-rails db:migrate
-rails s
+$ git clone https://github.com/87takakura/campapp-31513.git
+$ cd campapp-31513
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
 
 
 
@@ -98,8 +98,8 @@ rails s
 | toilet_id       | integer     | null: false                  |
 | bath_id         | integer     | null: false                  |
 | parking_id      | integer     | null: false                  |
-| phone_number    | integer     |
-| web_site        | strings     | 
+| phone_number    | string    |
+| web_site        | string     | 
 
 ### Association
 
