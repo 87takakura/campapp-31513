@@ -11,6 +11,6 @@ Rails.application.routes.draw do
       resources :chats
     end
    
-
+    get 'campposts/search'
 
   end

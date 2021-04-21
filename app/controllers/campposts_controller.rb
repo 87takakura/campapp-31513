@@ -3,12 +3,16 @@ class CamppostsController < ApplicationController
   before_action :set_camppost, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
+  before_action :search_camppost, only: [:search]
 
   def index
     @campposts = Camppost.order('created_at DESC')
-
   end
 
+  def search
+    @results = @p.result.includes(:category) 
+   end
+    
   def show
     @comment = Comment.new
   end
@@ -48,6 +52,7 @@ class CamppostsController < ApplicationController
     end
   end
 
+
   private
    def set_camppost
     @camppost = Camppost.find(params[:id])
@@ -62,6 +67,11 @@ class CamppostsController < ApplicationController
       redirect_to camppost_path 
     end
    end
+  
+   def search_camppost
+    @p = Camppost.ransack(params[:q])
+   end
+  
   end
 
 
