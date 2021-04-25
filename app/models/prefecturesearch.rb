@@ -1,0 +1,2 @@
+class Prefecturesearch < ApplicationRecord
+end

@@ -73,3 +73,5 @@ gem 'jquery-rails'
 gem "aws-sdk-s3", require: false
 
 gem 'ransack'
+
+gem 'bootstrap', '~> 4.1.1'

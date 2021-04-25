@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :campposts
+  has_many :camppostsearches
 end

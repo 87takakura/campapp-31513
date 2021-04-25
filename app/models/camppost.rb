@@ -11,7 +11,7 @@ class Camppost < ApplicationRecord
   belongs_to :fire
   belongs_to :cargetin
 
-  belongs_to :category
+  #belongs_to :category
 
   has_many :comments, dependent: :destroy
   has_many :chats, dependent: :destroy
