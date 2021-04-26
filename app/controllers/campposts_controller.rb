@@ -52,7 +52,8 @@ class CamppostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:category)  # 検索条件にマッチした商品の情報を取得
+    @results = @p.result
+    #.includes(:prefecture)  # 検索条件にマッチした商品の情報を取得
   end
 
   private

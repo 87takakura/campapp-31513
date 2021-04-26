@@ -4,10 +4,13 @@ class CamppostsearchesController < ApplicationController
   def index
     @camppostsearches = Camppostsearch.all
     set_camppostsearch_column
+
   end
 
   def search
-    @results = @p.result.includes(:category) 
+    @results = @p.result.includes(:prefecture_id) 
+    #@camppost = Camppost.all
+    #binding.pry
   end
 
   private

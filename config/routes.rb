@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'camppostsearches/index'
-  get 'camppostsearches/search'
+  get 'campposts/index'
+  get 'campposts/search'
   devise_for :users
   root to: "home#index"
   #post 'chats', to: 'chats#create'
