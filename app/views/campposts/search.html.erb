@@ -11,18 +11,27 @@
     <br>
     <li>
 
+    
+   <%= image_tag result.image.variant(resize: '320x350'), class: 'camppost-image' if result.image.attached? %>
+
+  <div class='camppost-info'>
+    <span>都道府県名:<%= result.prefecture.name %></span> 
+  </div>
+
+ <div class='camppost-info'>
+  <span>キャンプ場名:<%= result.name %></span>
+ </div>
+
+ <div class='camppost-info'>
+   <span>投稿者:<%= result.user.username%></span>
+ </div>
 
 
-<%= result.name %>
+   <%= link_to"記事詳細へ", result %>
 
-
-    <%= result.name %>
     </li>
   <% end %>
 <% else %>
- <%#= @result.prefecture.name %>の記事はありません
+ <%=  %>の記事はありません
 <% end %>
-<br>
-<%= link_to 'トップページへ戻る', root_path %>
-
 </div>

@@ -19,7 +19,21 @@
         <div class='search_form'>
            
          <div class='camppostsearche-box'>  
-           <%= render partial: 'camppostsearches/index', locals: { camppostsearches: @camppostsearches } %>
+
+
+       <%= search_form_for @p, url: campposts_search_path do |f| %>
+  <%= f.label '都道府県で記事検索' %>
+  <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, include_blank: '指定なし' %>
+  <%= f.submit '検索' %>
+
+  <br>
+  <%# 商品一覧 %>
+
+
+<% end %>
+
+
+
          </div>
 
         </div>
@@ -42,6 +56,11 @@
         <span>キャンプ場名:<%= camppost.name %></span>
       </div>
  
+      <div class='camppost-info'>
+        <span>投稿者:<%= camppost.user.username%></span>
+      </div>
+       
+
       <div class='link'>
         <%= link_to"記事詳細へ", camppost_path(camppost) %>
       </div>

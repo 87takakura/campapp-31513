@@ -1,8 +1,8 @@
 class CamppostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_camppost, only: [:show, :edit, :update, :destroy]
+  before_action :set_camppost, only: [:show, :edit, :update, :destroy,]
   before_action :move_to_index, only: [:edit, :update, :destroy]
-  before_action :search_camppost, only: [:index, :search]
+  before_action :search_camppost, only: [:index, :show, :search]
 
 
   def index
@@ -53,6 +53,7 @@ class CamppostsController < ApplicationController
 
   def search
     @results = @p.result
+    #binding.pry
     #.includes(:prefecture)  # 検索条件にマッチした商品の情報を取得
   end
 
