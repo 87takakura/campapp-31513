@@ -21,10 +21,10 @@
          <div class='camppostsearche-box'>  
 
 
-       <%= search_form_for @p, url: campposts_search_path do |f| %>
+<%= search_form_for @p, url: campposts_search_path do |f| %>
   <%= f.label '都道府県で記事検索' %>
-  <%= f.collection_select :prefecture_id_eq, @prefecture, :id, :name, include_blank: '指定なし' %>
-  <%= f.submit '検索' %>
+  <%= f.collection_select :prefecture_id_eq, @prefectures, :id, :name, include_blank: '指定なし' %>
+<%= f.submit '検索' %>
 
   <br>
   <%# 商品一覧 %>
