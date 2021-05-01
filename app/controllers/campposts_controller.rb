@@ -1,6 +1,6 @@
 class CamppostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :set_camppost, only: [:show, :edit, :update, :destroy,]
+  before_action :set_camppost, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :search_camppost, only: [:index, :show, :search]
 
@@ -75,6 +75,7 @@ class CamppostsController < ApplicationController
 
    def search_camppost
     @p = Camppost.ransack(params[:q])  # 検索オブジェクトを生成
+    @prefectures = Prefecture.all
    end
 
    def set_camppost_column

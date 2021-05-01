@@ -23,7 +23,7 @@
  </div>
 
  <div class='camppost-info'>
-   <span>投稿者:<%= result.user.username%></span>
+   <span>投稿者:<%= result.user.username %></span>
  </div>
 
 
@@ -32,6 +32,8 @@
     </li>
   <% end %>
 <% else %>
- <%=  %>の記事はありません
+
+ <%= @p.prefecture_id_eq %>の記事はありません
+
 <% end %>
 </div>
