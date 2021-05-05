@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'campposts/index'
+  get 'campposts/search'
   devise_for :users
   root to: "home#index"
   #post 'chats', to: 'chats#create'
@@ -9,8 +11,9 @@ Rails.application.routes.draw do
     resources :campposts do
       resources :comments
       resources :chats
-    end
-   
 
+    end
+    
+ 
 
   end

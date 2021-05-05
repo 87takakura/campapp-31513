@@ -1,0 +1,38 @@
+<h1>
+  検索結果
+</h1>
+<%# 検索結果の個数で条件分岐 %>
+
+<div class='search-result'>
+
+<% if @results.length !=0 %>
+  <% @results.each do |result| %>
+    <td>
+    <br>
+    <li>
+
+    
+   <%= image_tag result.image.variant(resize: '320x350'), class: 'camppost-image' if result.image.attached? %>
+
+  <div class='camppost-info'>
+    <span>都道府県名:<%= result.prefecture.name %></span> 
+  </div>
+
+ <div class='camppost-info'>
+  <span>キャンプ場名:<%= result.name %></span>
+ </div>
+
+ <div class='camppost-info'>
+   <span>投稿者:<%= result.user.username %></span>
+ </div>
+
+
+   <%= link_to"記事詳細へ", result %>
+
+    </li>
+  <% end %>
+<% else %>
+ <%#= @p.prefecture_id_eq %>該当の記事はありません
+
+<% end %>
+</div>
