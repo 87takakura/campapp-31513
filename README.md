@@ -46,9 +46,9 @@ https://campapp-31513.herokuapp.com/
 必要情報を記入し、キャンプ場紹介の記事を投稿する
 [![Image from Gyazo](https://i.gyazo.com/458a5f3aa4bdb2f5d8df94f8acd59201.gif)](https://gyazo.com/458a5f3aa4bdb2f5d8df94f8acd59201)
 
-##実装予定の機能	
-カテゴリによる検索機能
-県名などの情報で記事を検索できるようにする
+記事検索機能
+県名で記事を検索できるようにする
+[![Image from Gyazo](https://i.gyazo.com/a15b606024147e8236b0fb23c399c2b2.gif)](https://gyazo.com/a15b606024147e8236b0fb23c399c2b2)
 
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/2665849e4d7d05b8b10655edf0e75d97.png)](https://gyazo.com/2665849e4d7d05b8b10655edf0e75d97)
