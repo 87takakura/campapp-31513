@@ -2,6 +2,7 @@
 
 ## アプリケーション名
 canpinfo	
+[![Image from Gyazo](https://i.gyazo.com/93f05c0cece96eec4fea0b313657cbf5.jpg)](https://gyazo.com/93f05c0cece96eec4fea0b313657cbf5)
 
 ## アプリケーション概要
 キャンプ場情報の紹介サイト
