@@ -53,7 +53,6 @@ class CamppostsController < ApplicationController
 
   def search
     @results = @p.result
-    #binding.pry
     #.includes(:prefecture)  # 検索条件にマッチした商品の情報を取得
   end
 
@@ -75,6 +74,7 @@ class CamppostsController < ApplicationController
 
    def search_camppost
     @p = Camppost.ransack(params[:q])  # 検索オブジェクトを生成
+    #@o = Prefecture.ransack(params[:q])  # 検索オブジェクトを生成
     @prefectures = Prefecture.all
    end
 
