@@ -11,9 +11,8 @@ Rails.application.routes.draw do
     resources :campposts do
       resources :comments
       resources :chats
-
     end
     
- 
+    resources :maps, only: [:index]
 
   end
