@@ -1,0 +1,89 @@
+<h2>gmap</h2>
+<form method="post" id="latlng">
+ <label for="latitude">緯度</label>
+  <input type="text" id="latitude" name="latitude" />
+  <label form="longitude">経度</label>
+  <input type="text" id="longitude" name="longitude" /></form>
+
+<input id="address" type="textbox" value="検索">
+<input type="button" value="Encode" onclick="codeAddress()">
+
+<form id="form" name="form" method="post">
+  Longitude：緯度
+  <input name="longitude" type="text" id="longitude" size="30">
+  Latitude：経度
+  <input name="latitude" type="text" id="latitude" size="30">
+</form>
+
+<div id='map'></div>
+
+<style>
+#map {
+  height: 600px;
+  width: 600px;
+}
+</style>
+<script>
+let map
+
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.689, lng: 139.691},
+    zoom: 12,
+  });
+//マーカー初期ポイント
+  var marker = new google.maps.Marker({
+    position:  {lat: 35.689, lng: 139.691},
+    map: map,
+    draggable: true,
+    
+    //position: initPos
+  });
+}
+
+let geocoder
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          position: results[0].geometry.location      
+      });
+  
+  
+  //位置情報の取得
+  //ドラッグが終わったら緯度経度を取得
+    google.maps.event.addListener(marker,'dragend', function(event) {
+        document.form.Longitude.value = marker.getPosition().lat();
+        document.form.Latitude.value  = marker.getPosition().lng();
+    });
+     
+    //ドラッグが終わったら緯度経度を取得
+    google.maps.event.addListener(marker,'dragend', function(event) {
+        document.form.Longitude.value = marker.getPosition().lat();
+        document.form.Latitude.value  = marker.getPosition().lng();
+    }); 
+
+} else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+
+//GEvent.addListener(mk,"dragend", function() {
+      //var p = mk.getLatLng();
+      //document.getElementById('latitude').value = p.lat();
+      //document.getElementById('longitude').value = p.lng();
+    //} );
+// Markerのドラッグ終了イベント
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgZh2GSbSJqZTJDMFoGEVTXJUHZLLUPmQ&callback=initMap" async defer></script>

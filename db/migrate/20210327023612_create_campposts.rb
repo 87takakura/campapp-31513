@@ -16,6 +16,8 @@ class CreateCampposts < ActiveRecord::Migration[6.0]
       t.integer :parking_id, null: false
       t.string :phone_number
       t.string :web_site
+      t.float :latitude
+      t.float :longitude
       t.timestamps
     end
   end

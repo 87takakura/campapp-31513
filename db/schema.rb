@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2021_05_07_134243) do
     t.integer "parking_id", null: false
     t.string "phone_number"
     t.string "web_site"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_campposts_on_user_id"
