@@ -75,3 +75,7 @@ gem "aws-sdk-s3", require: false
 gem 'ransack'
 
 gem 'bootstrap', '~> 4.1.1'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
