@@ -51,5 +51,6 @@ test:
 production:
   <<: *default
   database: campapp_31513_production
-  username: campapp_31513
-  password: <%= ENV['CAMPAPP_31513_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
