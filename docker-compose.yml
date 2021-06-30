@@ -2,6 +2,7 @@ version: "3.9"
 services:
   db:
     image: mysql:5.6.51
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - ./app/db/mysql_data:/var/lib/mysql
     environment:
@@ -10,7 +11,7 @@ services:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      - ./app:/myapp
+      - ./campapp_31513:/campapp
     ports:
       - "3000:3000"
     depends_on:
