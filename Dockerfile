@@ -12,7 +12,7 @@ WORKDIR /campapp
 COPY Gemfile Gemfile.lock /campapp/
 COPY ./app /campapp
 
-RUN bundle config --local set path 'vender/bundle'
+RUN bundle config --local set path 'vender/bundle' \ 
 RUN bundle install
 
 

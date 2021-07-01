@@ -14,9 +14,9 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  socket: /tmp/mysql.sock
-
+  password: 5ha/phq84S%S
+  #socket: /tmp/mysql.sock
+  host: db
 development:
   <<: *default
   database: campapp_31513_development
@@ -52,5 +52,5 @@ production:
   <<: *default
   database: campapp_31513_production
   username: root
-  password:
+  password: 5ha/phq84S%S
   socket: /var/lib/mysql/mysql.sock

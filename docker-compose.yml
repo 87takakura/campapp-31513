@@ -1,18 +1,20 @@
 version: "3.9"
 services:
   db:
-    image: mysql:5.6.51
+    image: mariadb
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./app/db/mysql_data:/var/lib/mysql
+      - ./campapp_31513/db/mysql_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 5ha/phq84S%S
   web:
     build: .
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'"
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - ./campapp_31513:/campapp
     ports:
       - "3000:3000"
+    environment:
+      RAILS_ENV: development
     depends_on:
       - db
